@@ -135,6 +135,7 @@ zyhtest: $(TESTDIR)/zyhtest.c $(BINDIR)/libbloom.a
 	(cd $(BINDIR) && \
 	    $(CC) zyhtest.o -L$(BINDIR) $(RPATH) -lbloom -o zyh-test)
 
+
 perf: $(BINDIR)/test-perf
 	$(BINDIR)/test-perf
 

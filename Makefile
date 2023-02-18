@@ -129,6 +129,12 @@ test: $(BINDIR)/test-libbloom $(BINDIR)/test-basic
 	$(BINDIR)/test-basic
 	$(BINDIR)/test-libbloom
 
+
+zyhtest: $(TESTDIR)/zyhtest.c $(BINDIR)/libbloom.a
+	$(CC) $(CFLAGS) $(OPT) $(INC) -c $(TESTDIR)/zyhtest.c -o $(BINDIR)/zyhtest.o
+	(cd $(BINDIR) && \
+	    $(CC) zyhtest.o -L$(BINDIR) $(RPATH) -lbloom -o zyh-test)
+
 perf: $(BINDIR)/test-perf
 	$(BINDIR)/test-perf
 
